@@ -1,0 +1,3 @@
+package com.example.subscriptionbox.repository;
+import com.example.subscriptionbox.model.SubscriptionPlan; import java.util.List; import org.springframework.data.jpa.repository.JpaRepository;
+public interface SubscriptionRepository extends JpaRepository<SubscriptionPlan,Long>{ List<SubscriptionPlan> findByUserId(Long id); List<SubscriptionPlan> findByActiveTrueAndNextOrderDateLessThanEqual(java.time.LocalDate date); }
